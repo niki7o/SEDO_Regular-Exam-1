@@ -27,13 +27,14 @@ function displayQuote() {
 // --- Event Listeners ---
 // Display a random quote when the button is clicked
 if (newQuoteButton) { // Check if button exists before adding listener
+    // *** Add log confirming button found ***
+    console.log("Button found, adding listener."); // NEW LINE
     newQuoteButton.addEventListener('click', displayQuote);
 } else {
     console.error("Button with ID 'new-quote-btn' not found.");
 }
 
 // --- Initial Load ---
-// Display a random quote on initial page load (optional, could be first quote)
-// We already have a static quote in HTML, so we don't call displayQuote() on load
+// We use the static quote in HTML on initial load.
 // If you wanted a random one on load, you'd uncomment the next line:
 // document.addEventListener('DOMContentLoaded', displayQuote);
