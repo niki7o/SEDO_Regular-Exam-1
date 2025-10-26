@@ -9,7 +9,9 @@ const quotes = [
     { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
     { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
     { text: "If life were predictable it would cease to be life, and be without flavor.", author: "Eleanor Roosevelt" },
-    { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" }
+    { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+    { text: "Spread love everywhere you go. Let no one ever come to you without leaving happier.", author: "Mother Teresa" },
+    { text: "When you reach the end of your rope, tie a knot in it and hang on.", author: "Franklin D. Roosevelt" }
 ];
 
 // --- Functions ---
@@ -18,10 +20,18 @@ function getRandomQuote() {
     return quotes[randomIndex];
 }
 
+// *** Helper to get initials ***
+function getInitials(name) {
+    return name.split(' ').map(word => word[0]).join('');
+}
+
+// *** Modify displayQuote ***
 function displayQuote() {
     const quote = getRandomQuote();
     quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
-    quoteAuthorElement.textContent = `- ${quote.author}`;
+    // *** Display initials along with name ***
+    const initials = getInitials(quote.author);
+    quoteAuthorElement.textContent = `- ${quote.author} (${initials})`; // MODIFIED LINE
 }
 
 // --- Event Listeners ---
@@ -33,7 +43,6 @@ if (newQuoteButton) { // Check if button exists before adding listener
 }
 
 // --- Initial Load ---
-// Display a random quote on initial page load (optional, could be first quote)
-// We already have a static quote in HTML, so we don't call displayQuote() on load
+// We use the static quote in HTML on initial load.
 // If you wanted a random one on load, you'd uncomment the next line:
 // document.addEventListener('DOMContentLoaded', displayQuote);
