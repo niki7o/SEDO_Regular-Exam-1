@@ -18,9 +18,13 @@ function getRandomQuote() {
     return quotes[randomIndex];
 }
 
+// *** Add comments to displayQuote ***
 function displayQuote() {
+    // Step 1: Get a random quote object from the array
     const quote = getRandomQuote();
+    // Step 2: Set the text content of the quote paragraph
     quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
+    // Step 3: Set the text content of the author paragraph
     quoteAuthorElement.textContent = `- ${quote.author}`;
 }
 
@@ -33,7 +37,6 @@ if (newQuoteButton) { // Check if button exists before adding listener
 }
 
 // --- Initial Load ---
-// Display a random quote on initial page load (optional, could be first quote)
-// We already have a static quote in HTML, so we don't call displayQuote() on load
+// We use the static quote in HTML on initial load.
 // If you wanted a random one on load, you'd uncomment the next line:
 // document.addEventListener('DOMContentLoaded', displayQuote);
