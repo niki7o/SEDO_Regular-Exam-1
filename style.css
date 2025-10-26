@@ -55,7 +55,7 @@ h1 {
 }
 
 button {
-    background-color: #5c67f2;
+    background-color: #28a745; /* Green */
     color: white;
     /* *** Remove border: none; Add border style *** */
     /* border: none; */ /* REMOVED */
