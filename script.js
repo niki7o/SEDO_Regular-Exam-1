@@ -9,7 +9,9 @@ const quotes = [
     { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
     { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
     { text: "If life were predictable it would cease to be life, and be without flavor.", author: "Eleanor Roosevelt" },
-    { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" }
+    { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+    { text: "Spread love everywhere you go. Let no one ever come to you without leaving happier.", author: "Mother Teresa" },
+    { text: "When you reach the end of your rope, tie a knot in it and hang on.", author: "Franklin D. Roosevelt" }
 ];
 
 // --- Functions ---
@@ -18,9 +20,13 @@ function getRandomQuote() {
     return quotes[randomIndex];
 }
 
+// *** Add comments to displayQuote ***
 function displayQuote() {
+    // Step 1: Get a random quote object from the array
     const quote = getRandomQuote();
+    // Step 2: Set the text content of the quote paragraph
     quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
+    // Step 3: Set the text content of the author paragraph
     quoteAuthorElement.textContent = `- ${quote.author}`;
 }
 
